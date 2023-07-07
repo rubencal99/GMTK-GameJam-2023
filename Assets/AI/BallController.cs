@@ -12,6 +12,7 @@ public class BallController : MonoBehaviour
     public Quaternion startingRotation;
     public float desiredAngle;
 
+    public GameObject ball;
 
     public void AimBall(Vector2 movementDirection)
     {
@@ -35,6 +36,16 @@ public class BallController : MonoBehaviour
         transform.localRotation = rotation;
     }
 
+    public void ShootBall()
+    {
+        if (!hasBall)
+            return;
+
+        ball.transform.parent = null;
+        ball.GetComponent<Rigidbody2D>().simulated = true;
+        ball.GetComponent<Rigidbody2D>().AddForce(5 * aimDirection);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
@@ -48,5 +59,7 @@ public class BallController : MonoBehaviour
         hasBall = true;
 
         collision.transform.parent = transform;
+        ball = collision.gameObject;
+        ball.GetComponent<Rigidbody2D>().simulated = false;
     }
 }

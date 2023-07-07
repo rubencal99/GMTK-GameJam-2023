@@ -27,6 +27,9 @@ public class AgentInput : MonoBehaviour
 
     private void GetShootInput()
     {
-        OnShootKeyPressed?.Invoke();
+        if(Input.GetAxisRaw("Shoot") > 0)
+        {
+            OnShootKeyPressed?.Invoke();
+        }
     }
 }
