@@ -29,7 +29,7 @@ public class AgentMovement : MonoBehaviour
     protected void Awake()
     {
         // Grabs RigidBody that the script is attached to
-        rigidbody = GetComponent<Rigidbody2D>();
+        //rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Takes Vector2 from AgentInput OnMovementKeyPressed

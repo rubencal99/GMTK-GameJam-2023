@@ -816,7 +816,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1702567084 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8238659946971769611, guid: 4c9f3f9a323255e41baf2bd40959a78c, type: 3}
@@ -1186,11 +1186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7723178408324036548, guid: 68001b6c5e619a2438b9431790224595, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.42
       objectReference: {fileID: 0}
     - target: {fileID: 7723178408324036548, guid: 68001b6c5e619a2438b9431790224595, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 7723178408324036548, guid: 68001b6c5e619a2438b9431790224595, type: 3}
       propertyPath: m_LocalPosition.z
