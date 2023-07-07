@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Goal : MonoBehaviour
+public class Goal_Ball : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Ball"))
         {
-            print("Goal!");
+            print("Ball Goal!");
         }
     }
 }
