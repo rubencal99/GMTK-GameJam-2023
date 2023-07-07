@@ -5,7 +5,7 @@ public class MenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        //Connect to first demo scene
+        SceneManager.LoadScene("First Demo Scene");
     }
 
     public void OpenCredits()
