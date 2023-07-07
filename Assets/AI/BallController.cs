@@ -43,7 +43,7 @@ public class BallController : MonoBehaviour
 
         ball.transform.parent = null;
         ball.GetComponent<Rigidbody2D>().simulated = true;
-        ball.GetComponent<Rigidbody2D>().AddForce(5 * aimDirection);
+        ball.GetComponent<Rigidbody2D>().AddForce(40 * aimDirection);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
