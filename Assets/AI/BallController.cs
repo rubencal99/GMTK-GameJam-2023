@@ -19,7 +19,8 @@ public class BallController : MonoBehaviour
             return;
 
         //aimDirection = (movementDirection - (Vector2)transform.position).normalized;
-        aimDirection = movementDirection;
+        if(movementDirection != Vector2.zero)
+            aimDirection = movementDirection;
 
         // Use arctan to find angle from our x-axis and convert to degrees
         desiredAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
