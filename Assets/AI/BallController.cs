@@ -41,6 +41,7 @@ public class BallController : MonoBehaviour
         if (!hasBall)
             return;
 
+        hasBall = false;
         ball.transform.parent = null;
         ball.GetComponent<Rigidbody2D>().simulated = true;
         ball.GetComponent<Rigidbody2D>().AddForce(40 * aimDirection);
