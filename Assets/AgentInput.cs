@@ -11,13 +11,22 @@ public class AgentInput : MonoBehaviour
     [field: SerializeField]
     public UnityEvent<Vector2> OnMovementKeyPressed { get; set; }
 
+    [field: SerializeField]
+    public UnityEvent OnShootKeyPressed { get; set; }
+
     private void Update()
     {
         GetMovementInput();
+        GetShootInput();
     }
 
     private void GetMovementInput()
     {
         OnMovementKeyPressed?.Invoke(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
+    }
+
+    private void GetShootInput()
+    {
+        OnShootKeyPressed?.Invoke();
     }
 }
