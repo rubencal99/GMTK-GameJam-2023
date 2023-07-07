@@ -42,7 +42,7 @@ public class AgentMovement : MonoBehaviour
         }
         else
         {
-            movementDirection = Vector2.zero;
+            //movementDirection = Vector2.zero;
         }
 
         currentVelocity = calculateSpeed(movementInput);
@@ -75,7 +75,7 @@ public class AgentMovement : MonoBehaviour
         if (rigidbody != null)
         {
             rigidbody.velocity = currentVelocity * movementDirection.normalized;
-            rigidbody.velocity = Vector3.Scale(rigidbody.velocity, new Vector3(1f, 1f, 1.3f));
+            //rigidbody.velocity = Vector3.Scale(rigidbody.velocity, new Vector3(1f, 1f, 1.3f));
         }
     }
 }
