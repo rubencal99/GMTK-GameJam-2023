@@ -46,7 +46,7 @@ public class AIState : MonoBehaviour
             {
                 if (transition.PositiveResult != null)
                 {
-                    Debug.Log("Transitioning to " + transition.PositiveResult);
+                    //Debug.Log("Transitioning to " + transition.PositiveResult);
                     agentBrain.ChangetoState(transition.PositiveResult);
                     return;
                 }

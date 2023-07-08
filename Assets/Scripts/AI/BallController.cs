@@ -12,7 +12,8 @@ public class BallController : MonoBehaviour
     //public Quaternion startingRotation;
     public float desiredAngle;
 
-    public GameObject ball;
+    public GameObject ballCollider;
+    public Ball Ball;
 
     public void AimBall(Vector2 movementDirection)
     {
@@ -42,10 +43,12 @@ public class BallController : MonoBehaviour
             return;
 
         hasBall = false;
-        ball.transform.parent = null;
-        ball.transform.rotation = Quaternion.identity;
-        ball.GetComponent<Rigidbody2D>().simulated = true;
-        ball.GetComponent<Rigidbody2D>().AddForce(80 * aimDirection);
+
+        Ball.transform.parent = null;
+        Ball.inPossession = false;
+        Ball.transform.rotation = Quaternion.identity;
+        Ball.GetComponent<Rigidbody2D>().simulated = true;
+        Ball.GetComponent<Rigidbody2D>().AddForce(80 * aimDirection);
 
         transform.localRotation = Quaternion.identity;
     }
@@ -54,20 +57,42 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
         {
-            CaptureBall(collision);
+            TryCaptureBall(collision);
         }
     }
 
-    void CaptureBall(Collider2D collision)
+    void TryCaptureBall(Collider2D collision)
     {
-        hasBall = true;
-        ball = collision.gameObject;
+        Debug.Log("Attempting ball capture");
+        ballCollider = collision.gameObject;
+        Ball = ballCollider.GetComponent<Ball>();
+        if(Ball == null)
+            Ball = ballCollider.transform.parent.GetComponentInChildren<Ball>();
 
-        ball.transform.rotation = Quaternion.identity;
+        if (!Ball.AttemptCapture())
+            return;
+
+        ResetPossesser();
+
+        Ball.transform.rotation = Quaternion.identity;
 
         AimBall(collision.transform.position - transform.position);
 
-        ball.transform.parent = transform;
-        ball.GetComponent<Rigidbody2D>().simulated = false;
+        Ball.transform.parent = transform;
+        Ball.GetComponent<Rigidbody2D>().simulated = false;
+    }
+
+    void ResetPossesser()
+    {
+        if(Ball.possesser)
+        {
+            Ball.possesser.hasBall = false;
+            Ball.possesser.Ball = null;
+            Ball.possesser.ballCollider = null;
+        }
+            
+        hasBall = true;
+        Ball.inPossession = true;
+        Ball.possesser = this;
     }
 }
