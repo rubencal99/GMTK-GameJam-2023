@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     public float ballStaminaAttacker;
     public float ballStaminaDefender;
     public bool attemptingCapture;
+    public Team teamOwner;
 
     // Start is called before the first frame update
     void Start()
@@ -34,5 +35,15 @@ public class Ball : MonoBehaviour
         ballStaminaDefender = Random.Range(0.3f, 0.9f);
 
         return ballStaminaAttacker < ballStaminaDefender;
+    }
+
+    public Team GetOwner()
+    {
+        return teamOwner;
+    }
+
+    public void SetOwner(Team team)
+    {
+        teamOwner = team;
     }
 }

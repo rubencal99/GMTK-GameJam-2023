@@ -53,18 +53,12 @@ public class FoulTracker : MonoBehaviour
 
         while (timeElapsed < timeDuration)
         {
-            //if player calls foul, end
-            //else add to timeElapsed
             timeElapsed += Time.deltaTime;
-
             yield return null;
-            //*****
-            //In reality can just stop the coroutine when the whistle is blown. Will either end with
-            //A positive or negative audinece reception. No need to resume the timer.
         }
 
         currentCoroutine = null;
-        print("Missed foul! Type: " + currentFoul.foulType);
+        print("Missed foul! Type: " + currentFoul.foulType + ". Team: " + currentFoul.team.name);
     }
 }
 
@@ -72,9 +66,9 @@ public struct Foul
 {
     public enum FoulType { BALLOOB, PLAYEROOB, OFFSIDES, GOAL};
     public FoulType foulType;
-    public int team;
+    public Team team;
 
-    public Foul(FoulType _foulType, int _team)
+    public Foul(FoulType _foulType, Team _team)
     {
         foulType = _foulType;
         team = _team;

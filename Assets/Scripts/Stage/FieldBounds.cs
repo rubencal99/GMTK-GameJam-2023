@@ -6,13 +6,21 @@ public class FieldBounds : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
         {
-            Foul oob = new Foul(Foul.FoulType.BALLOOB, 0);
-            FoulTracker.instance.FoulHappened(oob);
+            Team foulTeam = collision.GetComponent<Ball>().GetOwner();
+            if(foulTeam != null)
+            {
+                Foul oob = new Foul(Foul.FoulType.BALLOOB, foulTeam);
+                FoulTracker.instance.FoulHappened(oob);
+            }
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Foul oob = new Foul(Foul.FoulType.PLAYEROOB, 0);
-            FoulTracker.instance.FoulHappened(oob);
+            Team foulTeam = collision.GetComponent<PlayerTeam>().GetTeam();
+            if(foulTeam != null)
+            {
+                Foul oob = new Foul(Foul.FoulType.PLAYEROOB, foulTeam);
+                FoulTracker.instance.FoulHappened(oob);
+            }
         }
     }
 }

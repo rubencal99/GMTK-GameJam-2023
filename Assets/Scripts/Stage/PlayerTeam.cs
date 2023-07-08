@@ -24,4 +24,9 @@ public class PlayerTeam : MonoBehaviour
     {
         avatar.GetComponent<Renderer>().sharedMaterial.SetColor("_UniformColor", team.color);
     }
+
+    public Team GetTeam()
+    {
+        return team;
+    }
 }
