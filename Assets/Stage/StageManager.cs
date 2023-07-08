@@ -1,11 +1,16 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour
 {
     public static StageManager instance;
     public StageTimer stageTimer;
     public GameObject flagPanel;
+
+    public GameObject victoryPanel;
+    public GameObject defeatPanel;
+    public GameObject pausePanel;
 
     private Coroutine currentCoroutine;
 
@@ -27,6 +32,36 @@ public class StageManager : MonoBehaviour
         //Play animation/sound, pause.
         //Crowd reaction
         //Reset players
+    }
+
+    public void Victory()
+    {
+        victoryPanel.SetActive(true);
+    }
+
+    public void Defeat()
+    {
+        defeatPanel.SetActive(true);
+    }
+
+    public void ReturnToTitleScreen()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
+
+    public void OpenPause()
+    {
+        pausePanel.SetActive(true);
+    }
+
+    public void ClosePause()
+    {
+        pausePanel.SetActive(false);
     }
 
     private IEnumerator IntroRoutine()

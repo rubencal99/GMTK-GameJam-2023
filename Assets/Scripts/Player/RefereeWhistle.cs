@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerWhistle : MonoBehaviour
+public class RefereeWhistle : MonoBehaviour
 {
     public GameObject flagPanel;
 
