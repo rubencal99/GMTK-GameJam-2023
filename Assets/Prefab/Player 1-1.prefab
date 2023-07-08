@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 06f7118fce70a3241aa317ed79582eea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,7 +168,8 @@ MonoBehaviour:
   aimDirection: {x: 0, y: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   desiredAngle: 0
-  ball: {fileID: 0}
+  ballCollider: {fileID: 0}
+  Ball: {fileID: 0}
 --- !u!58 &19700349296574107
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -196,6 +197,7 @@ GameObject:
   - component: {fileID: 9069192420572649278}
   - component: {fileID: 9069192420572649249}
   - component: {fileID: 9069192420572649248}
+  - component: {fileID: 4763793731195566596}
   - component: {fileID: 9069192420572649279}
   m_Layer: 7
   m_Name: Player 1-1
@@ -318,6 +320,20 @@ MonoBehaviour:
   <OnVelocityChange>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4763793731195566596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069192420572649276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a63e2536a7b32647babe175980f8524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatar: {fileID: 1554902835}
+  team: {fileID: 0}
 --- !u!50 &9069192420572649279
 Rigidbody2D:
   serializedVersion: 4
