@@ -6,11 +6,13 @@ public class FieldBounds : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
         {
-            print("Ball out of bounds!");
+            Foul oob = new Foul(Foul.FoulType.BALLOOB, 0);
+            FoulTracker.instance.FoulHappened(oob);
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            print("Player out of bounds!");
+            Foul oob = new Foul(Foul.FoulType.PLAYEROOB, 0);
+            FoulTracker.instance.FoulHappened(oob);
         }
     }
 }

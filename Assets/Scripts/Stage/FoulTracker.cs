@@ -46,17 +46,25 @@ public class FoulTracker : MonoBehaviour
             //if player blows whistle, pause
             //if player calls foul, end
             //else add to timeElapsed
+            timeElapsed += Time.deltaTime;
+
             yield return null;
         }
 
         currentCoroutine = null;
-        print("Missed foul!");
+        print("Missed foul! Type: " + currentFoul.foulType);
     }
 }
 
 public struct Foul
 {
-    enum FoulType { BALLOOB, PLAYEROOB, OFFSIDES, GOAL};
-    FoulType foulType;
-    bool team;
+    public enum FoulType { BALLOOB, PLAYEROOB, OFFSIDES, GOAL};
+    public FoulType foulType;
+    public int team;
+
+    public Foul(FoulType _foulType, int _team)
+    {
+        foulType = _foulType;
+        team = _team;
+    }
 }
