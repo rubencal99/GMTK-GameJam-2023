@@ -10,7 +10,7 @@ public class FieldBounds : MonoBehaviour
             if(foulTeam != null)
             {
                 Foul oob = new Foul(Foul.FoulType.BALLOOB, foulTeam);
-                FoulTracker.instance.FoulHappened(oob);
+                FoulManager.instance.FoulHappened(oob);
             }
             //else reset ball
         }
@@ -20,7 +20,7 @@ public class FieldBounds : MonoBehaviour
             if(foulTeam != null)
             {
                 Foul oob = new Foul(Foul.FoulType.PLAYEROOB, foulTeam);
-                FoulTracker.instance.FoulHappened(oob);
+                FoulManager.instance.FoulHappened(oob);
             }
         }
     }

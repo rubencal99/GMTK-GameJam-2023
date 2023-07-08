@@ -19,7 +19,7 @@ public class StageManager : MonoBehaviour
     public void WhistleBlown()
     {
         stageTimer.PauseTimer();
-        FoulTracker.instance.StopCountdown();
+        FoulManager.instance.StopCountdown();
         flagPanel.SetActive(true);
     }
 

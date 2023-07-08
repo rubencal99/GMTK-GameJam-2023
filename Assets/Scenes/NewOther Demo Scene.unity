@@ -1945,7 +1945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1840679794
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2448,6 +2448,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4763793731195566596, guid: 4c9f3f9a323255e41baf2bd40959a78c, type: 3}
+      propertyPath: team
+      value: 
+      objectReference: {fileID: 11400000, guid: 7591fde05be92ce43823572e7f430719, type: 2}
     - target: {fileID: 9069192420572649249, guid: 4c9f3f9a323255e41baf2bd40959a78c, type: 3}
       propertyPath: <OnShootKeyPressed>k__BackingField.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2482,7 +2486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9069192420572649276, guid: 4c9f3f9a323255e41baf2bd40959a78c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9069192420572649278, guid: 4c9f3f9a323255e41baf2bd40959a78c, type: 3}
       propertyPath: m_RootOrder

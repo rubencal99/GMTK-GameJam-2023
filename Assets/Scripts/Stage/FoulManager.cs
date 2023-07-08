@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-public class FoulTracker : MonoBehaviour
+public class FoulManager : MonoBehaviour
 {
-    public static FoulTracker instance;
+    public static FoulManager instance;
     private bool recentFoul = false;
     private Foul currentFoul;
     private IEnumerator currentCoroutine;
@@ -59,6 +59,30 @@ public class FoulTracker : MonoBehaviour
 
         currentCoroutine = null;
         print("Missed foul! Type: " + currentFoul.foulType + ". Team: " + currentFoul.team.name);
+        recentFoul = false;
+    }
+
+    public void CompareCall(Team refereeTeam)
+    {
+        if (!recentFoul)
+        {
+            print("No foul to call");
+            //Don't reset players?
+        }
+        else
+        {
+            if (refereeTeam != currentFoul.team)
+            {
+                print("Wrong foul!");
+            }
+            else
+            {
+                print("Good call!");
+            }
+
+            recentFoul = false;
+            //Reset players
+        }
     }
 }
 
