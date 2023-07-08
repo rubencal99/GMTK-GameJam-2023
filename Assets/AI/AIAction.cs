@@ -5,11 +5,13 @@ using UnityEngine;
 // Dictates what should happen when we enter a state
 public abstract class AIAction : MonoBehaviour
 {
+    protected AIActionData aiActionData;
+    protected AIMovementData aiMovementData;
     protected AgentBrain agentBrain;
     private void Awake()
     {
-        //aiActionData = transform.parent.parent.GetComponentInChildren<AIActionData>();
-        //aiMovementData = transform.parent.parent.GetComponentInChildren<AIMovementData>();
+        aiActionData = transform.parent.parent.GetComponentInChildren<AIActionData>();
+        aiMovementData = transform.parent.parent.GetComponentInChildren<AIMovementData>();
         agentBrain = transform.parent.parent.GetComponent<AgentBrain>();
     }
 
