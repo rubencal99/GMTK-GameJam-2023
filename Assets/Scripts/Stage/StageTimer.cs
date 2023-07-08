@@ -12,10 +12,10 @@ public class StageTimer : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab))
-        {
-            isPaused = !isPaused;
-        }
+        //if(Input.GetKeyDown(KeyCode.Tab))
+        //{
+        //    isPaused = !isPaused;
+        //}
 
         if(!isPaused)
         {
@@ -30,5 +30,15 @@ public class StageTimer : MonoBehaviour
                 //Run victory sequence
             }
         }
+    }
+
+    public void PauseTimer()
+    {
+        isPaused = true;
+    }
+
+    public void UnPauseTimer()
+    {
+        isPaused = false;
     }
 }

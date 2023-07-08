@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8568a2c318a71324cbc196e71e7c1224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageTimer: {fileID: 1268985222}
 --- !u!4 &89355880
 Transform:
   m_ObjectHideFlags: 0

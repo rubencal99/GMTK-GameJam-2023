@@ -3,11 +3,22 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
+    public static StageManager instance;
+    public StageTimer stageTimer;
+
+
     private Coroutine currentCoroutine;
 
     private void Awake()
     {
+        instance = this;
         //StartNewCoroutine(IntroRoutine());
+    }
+
+    public void WhistleBlown()
+    {
+        stageTimer.PauseTimer();
+        FoulTracker.instance.StopCountdown();
     }
 
     private IEnumerator IntroRoutine()

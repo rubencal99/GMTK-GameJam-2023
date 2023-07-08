@@ -7,9 +7,11 @@ public class PlayerWhistle : MonoBehaviour
         //Players on field stop moving
         //User can no longer move
         //Open flag UI
-        //Pause countdown timer
-        //(if active) Pause WaitForFlag coroutine in FoulTracker
+        //Play whistle blowing sound, animation
+        //Pause countdown timer - DONE
+        //(if active) Pause WaitForFlag coroutine in FoulTracker - DONE
         print("FWEEEEEET");
+        StageManager.instance.WhistleBlown();
     }
         
 }
