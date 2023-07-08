@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using static UnityEngine.GraphicsBuffer;
@@ -12,6 +13,7 @@ public class AgentBrain : MonoBehaviour
 
     public GameObject closestBall;
     public GameObject closestGoal;
+    public GameObject closestEnemyGoal;
     public GameObject closestEnemy;
     public GameObject closestTeammate;
 
@@ -26,7 +28,7 @@ public class AgentBrain : MonoBehaviour
     private void Start()
     {
         FindBall();
-        FindGoal();
+        FindGoals();
         FindEnemy();
         FindTeammate();
     }
@@ -67,17 +69,19 @@ public class AgentBrain : MonoBehaviour
         }
     }
 
-    public void FindGoal()
+    public void FindGoals()
     {
         foreach (Goal_Player goal in FindObjectsOfType<Goal_Player>())
         {
-            if (closestGoal == null)
+            Debug.Log("Player color: " + player.teamColor);
+            Debug.Log("Goal color: " + goal.teamColor);
+            if (goal.teamColor == player.teamColor)
             {
                 closestGoal = goal.gameObject;
             }
-            if (Vector2.Distance(goal.transform.position, transform.position) < Vector2.Distance(closestGoal.transform.position, transform.position))
+            else
             {
-                closestGoal = goal.gameObject;
+                closestEnemyGoal = goal.gameObject;
             }
         }
     }

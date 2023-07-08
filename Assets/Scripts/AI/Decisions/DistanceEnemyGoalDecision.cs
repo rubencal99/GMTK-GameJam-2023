@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DistanceEnemyPlayerDecision : AIDecision
+public class DistanceEnemyGoalDecision : AIDecision
 {
     [field: SerializeField]
     [field: Range(0.1f, 20)]
@@ -11,8 +11,7 @@ public class DistanceEnemyPlayerDecision : AIDecision
     public override bool MakeADecision()
     {
         //Debug.Log(agentBrain);
-        agentBrain.FindEnemy();
-        var d = Vector2.Distance(agentBrain.closestEnemy.transform.position, transform.position);
+        var d = Vector3.Distance(agentBrain.closestEnemyGoal.transform.position, transform.position);
 
         if (d < Distance)
         {
@@ -23,11 +22,8 @@ public class DistanceEnemyPlayerDecision : AIDecision
 
     protected void OnDrawGizmos()
     {
-        if (agentBrain == null || agentBrain.closestTeammate == null)
-            return;
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, Distance);
-        Gizmos.DrawSphere(agentBrain.closestEnemy.transform.position, 0.5f);
         Gizmos.color = Color.white;
     }
 }

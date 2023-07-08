@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        EnsureCapture();
     }
 
     public bool AttemptCapture()
@@ -35,6 +35,14 @@ public class Ball : MonoBehaviour
         ballStaminaDefender = Random.Range(0.3f, 0.9f);
 
         return ballStaminaAttacker < ballStaminaDefender;
+    }
+
+    public void EnsureCapture()
+    {
+        if(transform.parent != null)
+        {
+            transform.parent.GetComponent<BallController>().Ball = this;
+        }
     }
 
     public Team GetOwner()

@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public Team team;
     public Color teamColor;
 
-    private void Start()
+    private void Awake()
     {
         teamColor = team.color;
     }

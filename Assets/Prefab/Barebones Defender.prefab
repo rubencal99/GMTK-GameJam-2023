@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 154794844}
   - component: {fileID: 154794847}
-  - component: {fileID: 154794846}
-  - component: {fileID: 154794848}
+  - component: {fileID: 3340117695438696782}
+  - component: {fileID: 5528287052055846419}
+  - component: {fileID: 3147208609915486864}
   m_Layer: 7
   m_Name: AttackingPassToTeammate
   m_TagString: Untagged
@@ -49,10 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Actions:
-  - {fileID: 154794848}
+  - {fileID: 0}
   Transitions:
   - {fileID: 1706212620}
---- !u!114 &154794846
+--- !u!114 &3340117695438696782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,11 +62,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 154794843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e65bd0380b809204e937230b2e2b05f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5458b4ef138b1cc4090d668587ca15d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromGoal: 5
---- !u!114 &154794848
+--- !u!114 &5528287052055846419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +74,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 154794843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37445211e86add34d8f74267b78b68e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fd6a2e1951e8634f8ff21d340db01e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3147208609915486864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154794843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515f736736d012745917a60fb5d47135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &514576735
@@ -473,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1706212618}
   - component: {fileID: 1706212620}
-  - component: {fileID: 1706212619}
+  - component: {fileID: 4189676087605768992}
   m_Layer: 7
   m_Name: TransitionIdle
   m_TagString: Untagged
@@ -509,10 +521,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Decisions>k__BackingField:
-  - {fileID: 1706212619}
+  - {fileID: 0}
   <PositiveResult>k__BackingField: {fileID: 1220990134354298690}
   <NegativeResult>k__BackingField: {fileID: 0}
---- !u!114 &1706212619
+--- !u!114 &4189676087605768992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -521,10 +533,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1706212617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edebdcdb7adbb1345837921d6637dd86, type: 3}
+  m_Script: {fileID: 11500000, guid: 24c47e72fcd0beb4e8e65f258621b01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Distance>k__BackingField: 0.98
 --- !u!1 &1743809722
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +764,7 @@ MonoBehaviour:
   closestBall: {fileID: 0}
   closestGoal: {fileID: 0}
   closestEnemy: {fileID: 0}
+  closestTeammate: {fileID: 0}
   player: {fileID: 219905491}
   ballController: {fileID: 1675221298}
   <OnMovementKeyPressed>k__BackingField:
@@ -1183,6 +1195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromGoal: 5
+  defensePos: {x: 0, y: 0}
+  randomBias: {x: 0, y: 0}
 --- !u!114 &1220990133979545721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1401,6 +1415,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromGoal: 5
+  defensePos: {x: 0, y: 0}
+  randomBias: {x: 0, y: 0}
 --- !u!1 &1220990134371688193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromGoal: 5
+  defensePos: {x: 0, y: 0}
+  randomBias: {x: 0, y: 0}
 --- !u!114 &1220990134634520328
 MonoBehaviour:
   m_ObjectHideFlags: 0

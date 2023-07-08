@@ -42,9 +42,8 @@ public class BallController : MonoBehaviour
         if (!hasBall)
             return;
 
-        Ball.GetComponent<Rigidbody2D>().AddForce(500 * aimDirection);
+        Ball.GetComponent<Rigidbody2D>().AddForce(1000 * aimDirection);
         DiscardBall();
-        
 
         transform.localRotation = Quaternion.identity;
     }
@@ -110,6 +109,8 @@ public class BallController : MonoBehaviour
         Ball.GetComponent<Rigidbody2D>().simulated = false;
 
         Ball.SetOwner(GetComponentInParent<PlayerTeam>().GetTeam());
+
+        //Ball.EnsureCapture(this);
     }
 
     void ResetPossesser()
