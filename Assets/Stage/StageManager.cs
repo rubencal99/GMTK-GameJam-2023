@@ -5,6 +5,7 @@ public class StageManager : MonoBehaviour
 {
     public static StageManager instance;
     public StageTimer stageTimer;
+    public GameObject flagPanel;
 
 
     private Coroutine currentCoroutine;
@@ -19,6 +20,7 @@ public class StageManager : MonoBehaviour
     {
         stageTimer.PauseTimer();
         FoulTracker.instance.StopCountdown();
+        flagPanel.SetActive(true);
     }
 
     private IEnumerator IntroRoutine()

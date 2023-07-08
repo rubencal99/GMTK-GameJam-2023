@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerWhistle : MonoBehaviour
 {
+    public GameObject flagPanel;
+
     public void Whistle()
     {
         //Players on field stop moving

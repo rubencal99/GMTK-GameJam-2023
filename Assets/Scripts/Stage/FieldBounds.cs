@@ -12,6 +12,7 @@ public class FieldBounds : MonoBehaviour
                 Foul oob = new Foul(Foul.FoulType.BALLOOB, foulTeam);
                 FoulTracker.instance.FoulHappened(oob);
             }
+            //else reset ball
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
