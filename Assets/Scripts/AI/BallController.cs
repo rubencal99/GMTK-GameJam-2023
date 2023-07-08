@@ -108,6 +108,8 @@ public class BallController : MonoBehaviour
 
         Ball.transform.parent = transform;
         Ball.GetComponent<Rigidbody2D>().simulated = false;
+
+        Ball.SetOwner(GetComponentInParent<PlayerTeam>().GetTeam());
     }
 
     void ResetPossesser()
