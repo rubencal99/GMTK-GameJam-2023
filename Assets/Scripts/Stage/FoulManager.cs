@@ -35,6 +35,7 @@ public class FoulManager : MonoBehaviour
         }
         else if (recentFoul == true)
         {
+            CrowdManager.instance.BadCall("NoCall_Foul");
             //Anger meter goes up for missing the previous foul
 
             currentFoul = foul;
