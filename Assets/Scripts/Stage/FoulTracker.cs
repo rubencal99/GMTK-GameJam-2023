@@ -19,24 +19,24 @@ public class FoulTracker : MonoBehaviour
         {
             currentFoul = foul;
             recentFoul = true;
-            currentCoroutine = WaitForCall();
+            currentCoroutine = WaitForFlag();
 
             StartCoroutine(currentCoroutine);
         }
         else if (recentFoul == true)
         {
-            //Anger meter goes up for missing foul
+            //Anger meter goes up for missing the previous foul
 
             currentFoul = foul;
             recentFoul = true;
 
             StopCoroutine(currentCoroutine);
-            currentCoroutine = WaitForCall();
+            currentCoroutine = WaitForFlag();
             StartCoroutine(currentCoroutine);
         }
     }
 
-    private IEnumerator WaitForCall()
+    private IEnumerator WaitForFlag()
     {
         float timeElapsed = 0f;
         float timeDuration = 5f;
