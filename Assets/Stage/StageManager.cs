@@ -7,7 +7,6 @@ public class StageManager : MonoBehaviour
     public StageTimer stageTimer;
     public GameObject flagPanel;
 
-
     private Coroutine currentCoroutine;
 
     private void Awake()
@@ -21,6 +20,13 @@ public class StageManager : MonoBehaviour
         stageTimer.PauseTimer();
         FoulManager.instance.StopCountdown();
         flagPanel.SetActive(true);
+    }
+
+    public void AnnounceCall()
+    {
+        //Play animation/sound, pause.
+        //Crowd reaction
+        //Reset players
     }
 
     private IEnumerator IntroRoutine()

@@ -24,7 +24,6 @@ public class FlagMenu : MonoBehaviour
 
     private void SelectTeam(int teamNum)
     {
-        //print("You chose: " + teams[teamNum].name);
         FoulManager.instance.CompareCall(teams[teamNum]);
     }
 }

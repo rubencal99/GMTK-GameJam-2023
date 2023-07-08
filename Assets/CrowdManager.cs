@@ -11,20 +11,19 @@ public class CrowdManager : MonoBehaviour
     [SerializeField]
     private Sprite[] faces = new Sprite[6];
     [SerializeField]
-    private Image currentFace;
+    private Image moodGuage;
 
     private void Awake()
     {
         instance = this;
-        currentFace = transform.GetChild(0).GetComponent<Image>();
-        currentFace.sprite = faces[0];
+        moodGuage.sprite = faces[0];
     }
 
     //This should contain all the values for how much anger increases/decreases.
     public Dictionary<string, int> crowdPeeves = new Dictionary<string, int>()
     {
-        {"NoCall_Foul", 10 },
-        {"Call_NoFoul", 10 },
+        {"NoCall_Foul", 10 },           //FoulManager
+        {"Call_NoFoul", 10 },           //
         {"WrongFoul_RightTeam", 15 },
         {"RightFoul_WrongTeam", 20},
         {"WrongFoul_WrongTeam", 25},
@@ -36,30 +35,43 @@ public class CrowdManager : MonoBehaviour
     {
         currentAnger += crowdPeeves[badCallType];
         print("Anger level: " + currentAnger);
+        ChangeFace();
+    }
 
-        if(currentAnger <= 20)
+    public void GoodCall()
+    {
+        currentAnger -= 10;
+        Mathf.Clamp(currentAnger, 0, 100);
+        print("Anger level: " + currentAnger);
+        ChangeFace();
+    }
+
+    public void ChangeFace()
+    {
+        //My magnum opus
+        if (currentAnger <= 20)
         {
-            currentFace.sprite = faces[0];
+            moodGuage.sprite = faces[0];
         }
-        else if(currentAnger <= 40)
+        else if (currentAnger <= 40)
         {
-            currentFace.sprite = faces[1];
+            moodGuage.sprite = faces[1];
         }
-        else if(currentAnger <= 60)
+        else if (currentAnger <= 60)
         {
-            currentFace.sprite = faces[2];
+            moodGuage.sprite = faces[2];
         }
-        else if(currentAnger <= 80)
+        else if (currentAnger <= 80)
         {
-            currentFace.sprite = faces[3];
+            moodGuage.sprite = faces[3];
         }
-        else if(currentAnger <= 100)
+        else if (currentAnger <= 100)
         {
-            currentFace.sprite = faces[4];
+            moodGuage.sprite = faces[4];
         }
-        else if(currentAnger > 100)
+        else if (currentAnger > 100)
         {
-            currentFace.sprite = faces[5];
+            moodGuage.sprite = faces[5];
             //Game over!
         }
     }
