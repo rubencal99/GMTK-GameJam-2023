@@ -42,20 +42,29 @@ public class BallController : MonoBehaviour
         if (!hasBall)
             return;
 
-        hasBall = false;
-
-        Ball.transform.parent = null;
-        Ball.inPossession = false;
-        Ball.transform.rotation = Quaternion.identity;
-        Ball.GetComponent<Rigidbody2D>().simulated = true;
-        Ball.GetComponent<Rigidbody2D>().AddForce(80 * aimDirection);
+        Ball.GetComponent<Rigidbody2D>().AddForce(1000 * aimDirection);
+        DiscardBall();
+        
 
         transform.localRotation = Quaternion.identity;
     }
 
+    void DiscardBall()
+    {
+        hasBall = false;
+        Ball.transform.parent = null;
+        Ball.inPossession = false;
+        Ball.possesser = null;
+        Ball.transform.rotation = Quaternion.identity;
+        Ball.GetComponent<Rigidbody2D>().simulated = true;
+        ballCollider = null;
+        Ball = null;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ball") ||
+            collision.gameObject.layer == LayerMask.NameToLayer("BallDetector"))
         {
             TryCaptureBall(collision);
         }
@@ -65,17 +74,36 @@ public class BallController : MonoBehaviour
     {
         Debug.Log("Attempting ball capture");
         ballCollider = collision.gameObject;
-        Ball = ballCollider.GetComponent<Ball>();
-        if(Ball == null)
-            Ball = ballCollider.transform.parent.GetComponentInChildren<Ball>();
+        if(ballCollider.layer == LayerMask.NameToLayer("Ball"))
+        {
+            Ball = ballCollider.GetComponent<Ball>();
+        }
+        else if(ballCollider.layer == LayerMask.NameToLayer("BallDetector"))
+        {
+            Ball = ballCollider.GetComponent<BallController>().Ball;
+        }
+            
+        if (Ball == null)
+        {
+            Debug.Log("No ball to capture.");
+            return;
+        }
 
+        Debug.Log(Ball);
         if (!Ball.AttemptCapture())
             return;
 
         ResetPossesser();
+        CaptureBall(collision);
 
+    }
+
+    void CaptureBall(Collider2D collision)
+    {
+        hasBall = true;
+        Ball.inPossession = true;
+        Ball.possesser = this;
         Ball.transform.rotation = Quaternion.identity;
-
         AimBall(collision.transform.position - transform.position);
 
         Ball.transform.parent = transform;
@@ -86,13 +114,7 @@ public class BallController : MonoBehaviour
     {
         if(Ball.possesser)
         {
-            Ball.possesser.hasBall = false;
-            Ball.possesser.Ball = null;
-            Ball.possesser.ballCollider = null;
+            Ball.possesser.DiscardBall();
         }
-            
-        hasBall = true;
-        Ball.inPossession = true;
-        Ball.possesser = this;
     }
 }

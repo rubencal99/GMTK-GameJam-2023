@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776116654f84bff479a30f1f7639d1e6, type: 3}
+  m_Name: CompositeBig
+  m_EditorClassIdentifier: 
+  behaviorWeights:
+  - behavior: {fileID: 11400000, guid: 5d3aae35cedfa6e44824463528735490, type: 2}
+    weight: 2
+  - behavior: {fileID: 11400000, guid: d82b1e8bf47454c49922be33b7817fea, type: 2}
+    weight: 1
+  - behavior: {fileID: 11400000, guid: 1307d3ffae71cda4bba91f54e92b85ad, type: 2}
+    weight: 1
+  - behavior: {fileID: 11400000, guid: c0f72fa4776848c4a842ee99df3e5714, type: 2}
+    weight: 0.08
+  - behavior: {fileID: 11400000, guid: 97880e15df409854a954bbb177a2a7a4, type: 2}
+    weight: 1
