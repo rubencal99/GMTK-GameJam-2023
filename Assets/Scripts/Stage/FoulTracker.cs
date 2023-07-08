@@ -3,18 +3,35 @@ using UnityEngine;
 
 public class FoulTracker : MonoBehaviour
 {
+    public static FoulTracker instance;
     private bool recentFoul = false;
     private Foul currentFoul;
     private IEnumerator currentCoroutine;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void FoulHappened(Foul foul)
     {
-        if(currentCoroutine == null)
+        if (currentCoroutine == null)
         {
             currentFoul = foul;
             recentFoul = true;
             currentCoroutine = WaitForCall();
 
+            StartCoroutine(currentCoroutine);
+        }
+        else if (recentFoul == true)
+        {
+            //Anger meter goes up for missing foul
+
+            currentFoul = foul;
+            recentFoul = true;
+
+            StopCoroutine(currentCoroutine);
+            currentCoroutine = WaitForCall();
             StartCoroutine(currentCoroutine);
         }
     }
@@ -33,12 +50,13 @@ public class FoulTracker : MonoBehaviour
         }
 
         currentCoroutine = null;
+        print("Missed foul!");
     }
 }
 
 public struct Foul
 {
-    enum FoulType { BALLOOB, PLAYEROOB};
+    enum FoulType { BALLOOB, PLAYEROOB, OFFSIDES, GOAL};
     FoulType foulType;
     bool team;
 }
