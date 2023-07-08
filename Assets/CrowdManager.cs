@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,6 +35,7 @@ public class CrowdManager : MonoBehaviour
         currentAnger += crowdPeeves[badCallType];
         print("Anger level: " + currentAnger);
         ChangeFace();
+        CheckDefeat();
     }
 
     public void GoodCall()
@@ -72,7 +72,14 @@ public class CrowdManager : MonoBehaviour
         else if (currentAnger > 100)
         {
             moodGuage.sprite = faces[5];
-            //Game over!
+        }
+    }
+
+    public void CheckDefeat()
+    {
+        if (currentAnger > maxAnger)
+        {
+            StageManager.instance.Defeat();
         }
     }
 
