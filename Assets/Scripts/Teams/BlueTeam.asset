@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: BlueTeam
   color: {r: 0, g: 0, b: 1, a: 0}
+  players:
+  - {fileID: 1220990132857799275, guid: 37919d9a2e0ac3848b7a596be9fcec39, type: 3}
+  - {fileID: 1220990132857799275, guid: 37919d9a2e0ac3848b7a596be9fcec39, type: 3}
+  - {fileID: 1220990132857799275, guid: 37919d9a2e0ac3848b7a596be9fcec39, type: 3}
+  - {fileID: 1220990132857799275, guid: 37919d9a2e0ac3848b7a596be9fcec39, type: 3}

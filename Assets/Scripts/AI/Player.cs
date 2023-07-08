@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float ballTimer;
+    public Team team;
+    public Color teamColor;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        ballTimer = Random.Range(0.3f, 0.9f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        teamColor = team.color;
     }
 }

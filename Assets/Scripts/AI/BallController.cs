@@ -42,7 +42,7 @@ public class BallController : MonoBehaviour
         if (!hasBall)
             return;
 
-        Ball.GetComponent<Rigidbody2D>().AddForce(1000 * aimDirection);
+        Ball.GetComponent<Rigidbody2D>().AddForce(500 * aimDirection);
         DiscardBall();
         
 

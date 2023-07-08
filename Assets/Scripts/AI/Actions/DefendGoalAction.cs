@@ -29,6 +29,9 @@ public class DefendGoalAction : AIAction
 
     void OnDrawGizmos()
     {
+        if (!Application.isPlaying)
+            return;
+
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(defensePos, 0.5f);
     }
