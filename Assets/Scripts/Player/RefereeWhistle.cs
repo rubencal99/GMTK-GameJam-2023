@@ -17,9 +17,9 @@ public class RefereeWhistle : MonoBehaviour
     public void Whistle()
     {
         //Players on field stop moving
+        //User can no longer move - DONE
         agentInput.enabled = false;
         agentMovement.currentVelocity = 0;
-        //User can no longer move - DONE
         //Open flag UI - DONE
         //Play whistle blowing sound, animation
         refSounds.PlaySound(0);

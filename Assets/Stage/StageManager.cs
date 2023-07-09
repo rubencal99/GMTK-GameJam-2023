@@ -33,8 +33,8 @@ public class StageManager : MonoBehaviour
         flagPanel.SetActive(false);
         //Play animation/sound, pause.
         //Crowd reaction
-        //Reset players
         referee.GetComponent<AgentInput>().enabled = true;
+        stageTimer.UnPauseTimer();
     }
 
     public void Victory()
