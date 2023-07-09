@@ -19,7 +19,7 @@ public class FindTeammateAction : AIAction
 
     protected void OnDrawGizmos()
     {
-        if (agentBrain == null)
+        if (agentBrain == null || agentBrain.closestTeammate == null)
             return;
 
         Gizmos.color = Color.green;

@@ -27,7 +27,7 @@ public class StageTimer : MonoBehaviour
             else if(timerValue <= 0)
             {
                 timerValue = 0;
-                //Run victory sequence
+                StageManager.instance.Victory();
             }
         }
     }

@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 7723178408324036549}
   - component: {fileID: 1411407983}
   - component: {fileID: 1411407984}
+  - component: {fileID: 6433168253285250792}
   m_Layer: 8
   m_Name: Ball
   m_TagString: Untagged
@@ -207,3 +208,16 @@ MonoBehaviour:
   ballStaminaAttacker: 0
   ballStaminaDefender: 0
   attemptingCapture: 0
+  teamOwner: {fileID: 0}
+--- !u!114 &6433168253285250792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723178408324036546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f524f2d8868bb534a8ec88f934da5edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

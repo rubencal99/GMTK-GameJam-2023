@@ -35,6 +35,7 @@ public class FoulManager : MonoBehaviour
         }
         else if (recentFoul == true)
         {
+            CrowdManager.instance.BadCall("NoCall_Foul");
             //Anger meter goes up for missing the previous foul
 
             currentFoul = foul;
@@ -66,18 +67,19 @@ public class FoulManager : MonoBehaviour
     {
         if (!recentFoul)
         {
-            print("No foul to call");
+            CrowdManager.instance.BadCall("Call_NoFoul");
             //Don't reset players?
         }
         else
         {
             if (refereeTeam != currentFoul.team)
             {
-                print("Wrong foul!");
+                CrowdManager.instance.BadCall("RightFoul_WrongTeam");
             }
             else
             {
                 print("Good call!");
+                CrowdManager.instance.GoodCall();
             }
 
             recentFoul = false;

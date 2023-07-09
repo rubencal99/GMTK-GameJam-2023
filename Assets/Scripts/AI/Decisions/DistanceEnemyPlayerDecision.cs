@@ -23,7 +23,7 @@ public class DistanceEnemyPlayerDecision : AIDecision
 
     protected void OnDrawGizmos()
     {
-        if (!Application.isPlaying)
+        if (agentBrain == null || agentBrain.closestTeammate == null)
             return;
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, Distance);
