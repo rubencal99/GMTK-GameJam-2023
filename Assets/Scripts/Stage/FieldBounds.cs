@@ -16,7 +16,7 @@ public class FieldBounds : MonoBehaviour
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Team foulTeam = collision.GetComponent<PlayerTeam>().GetTeam();
+            Team foulTeam = collision.GetComponent<TeamColor>().GetTeam();
             if(foulTeam != null)
             {
                 Foul oob = new Foul(Foul.FoulType.PLAYEROOB, foulTeam);
