@@ -42,6 +42,7 @@ public class Ball : MonoBehaviour
         if(transform.parent != null)
         {
             transform.parent.GetComponent<BallController>().Ball = this;
+            teamOwner = transform.parent.parent.GetComponent<Player>().team;
         }
     }
 

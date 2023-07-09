@@ -6790,6 +6790,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: e1929f29d1eb00742bf4b6df2b7cd704, type: 2}
     - target: {fileID: 7061694061478207192, guid: 29b38b3d00ad9fd4db13944d2f3eaafc, type: 3}
+      propertyPath: team
+      value: 
+      objectReference: {fileID: 11400000, guid: 430ae43790a5dcd4fabbf0f07e423575, type: 2}
+    - target: {fileID: 7061694061478207192, guid: 29b38b3d00ad9fd4db13944d2f3eaafc, type: 3}
       propertyPath: attackingPosition
       value: 
       objectReference: {fileID: 2041127651}
