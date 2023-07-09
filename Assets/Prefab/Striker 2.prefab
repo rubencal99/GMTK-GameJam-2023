@@ -562,7 +562,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06f7118fce70a3241aa317ed79582eea, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 7061694061478207196}
   - component: {fileID: 7061694061478207192}
   m_Layer: 7
-  m_Name: Striker
+  m_Name: Striker 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,12 +1015,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7061694062841461305}
+        m_TargetAssemblyTypeName: BallController, Assembly-CSharp
+        m_MethodName: AimBall
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnShootKeyPressed>k__BackingField:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7061694062841461305}
+        m_TargetAssemblyTypeName: BallController, Assembly-CSharp
+        m_MethodName: ShootBall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7061694061183529578}
         m_TargetAssemblyTypeName: AgentAnimations, Assembly-CSharp
-        m_MethodName: KickAnimation
+        m_MethodName: SetKickAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1101,6 +1125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: {fileID: 11400000, guid: 430ae43790a5dcd4fabbf0f07e423575, type: 2}
   teamColor: {r: 0, g: 0, b: 0, a: 0}
+  positions: []
 --- !u!1 &8282675359593867571
 GameObject:
   m_ObjectHideFlags: 0
