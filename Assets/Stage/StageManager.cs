@@ -61,7 +61,7 @@ public class StageManager : MonoBehaviour
     public void Defeat()
     {
         referee.GetComponent<AgentInput>().enabled = false;
-        defeatPanel.GetComponent<DefeatPanel>().timeLastedText.text = "Time Lasted: " + stageTimer.FinalTime().ToString();
+        defeatPanel.GetComponent<DefeatPanel>().timeLastedText.text = "Time Lasted - " + stageTimer.FinalTime().ToString();
         topPanel.SetActive(false);
         defeatPanel.SetActive(true);
         musicManager.DefeatStinger();
