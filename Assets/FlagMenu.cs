@@ -10,7 +10,7 @@ public class FlagMenu : MonoBehaviour
     public GameObject buttonPrefab;
     private Team[] teams;
 
-    private void OnEnable()
+    private void Start()
     {
         teams = TeamManager.instance.teamsList.ToArray();
         for(int i = 0; i < teams.Length; i++)
@@ -25,5 +25,6 @@ public class FlagMenu : MonoBehaviour
     private void SelectTeam(int teamNum)
     {
         FoulManager.instance.CompareCall(teams[teamNum]);
+
     }
 }

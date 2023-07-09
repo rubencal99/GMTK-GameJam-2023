@@ -5782,6 +5782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageTimer: {fileID: 859283248}
   flagPanel: {fileID: 501732010}
+  referee: {fileID: 1840679793}
   victoryPanel: {fileID: 203763261}
   defeatPanel: {fileID: 1259462934}
   pausePanel: {fileID: 117173584}

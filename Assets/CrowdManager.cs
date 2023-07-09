@@ -40,6 +40,7 @@ public class CrowdManager : MonoBehaviour
         print("Anger level: " + currentAnger);
         ChangeFace();
         CheckDefeat();
+        StageManager.instance.AnnounceCall();
     }
 
     public void GoodCall()
