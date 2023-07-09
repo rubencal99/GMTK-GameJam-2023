@@ -11,7 +11,7 @@ public class Bird : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time = Random.Range(20f, 30f);
+        time = Random.Range(15f, 25f);
         Timer = time;
         rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -23,7 +23,12 @@ public class Bird : MonoBehaviour
         if(Timer < 0 )
         {
             AnimateBird();
-            Timer = Random.Range(20f, 30f);
+            Timer = Random.Range(15f, 25f);
+        }
+        if(transform.position.x < -3)
+        {
+            transform.localPosition = new Vector3(3, 0, 1);
+            rigidbody.velocity = Vector2.zero;
         }
     }
 
