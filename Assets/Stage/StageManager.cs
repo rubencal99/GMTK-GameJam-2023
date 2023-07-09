@@ -21,6 +21,10 @@ public class StageManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
         StartNewCoroutine(IntroRoutine());
     }
 
@@ -97,8 +101,6 @@ public class StageManager : MonoBehaviour
             yield return null;
         }
 
-        //Enable Player control
-        //Enable Referee control
         musicManager.PlayMainTheme();
         CrowdManager.instance.sounds.PlaySoundLoop(4);  //Crowd loop
     }
