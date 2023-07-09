@@ -2601,6 +2601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590bc9735a27b2644a9da1c6ef2a4be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recentFoul: 0
 --- !u!1 &554457102
 GameObject:
   m_ObjectHideFlags: 0
@@ -9490,21 +9491,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 86827512158746730, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 280.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 416566720725096523, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 258.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 546182942217382908, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1992933257}
     - target: {fileID: 605689209925612053, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053845092512448604, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2206425816490866177, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
       propertyPath: m_RootOrder
@@ -9554,10 +9547,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ref
       objectReference: {fileID: 0}
-    - target: {fileID: 2207438101156890766, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1992933257}
     - target: {fileID: 2631854651074073417, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
       propertyPath: teamPanel
       value: 
@@ -9566,21 +9555,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 209.77
       objectReference: {fileID: 0}
-    - target: {fileID: 3044315694982427531, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_text
-      value: Red team
-      objectReference: {fileID: 0}
     - target: {fileID: 3049287136586379585, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3176149125339362624, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235120644698401510, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 209.77
       objectReference: {fileID: 0}
     - target: {fileID: 3879090004676794992, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
       propertyPath: m_Name
@@ -9590,6 +9571,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 209.77
       objectReference: {fileID: 0}
+    - target: {fileID: 4389675950743673007, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4938903773018791573, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9598,10 +9583,6 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4940330017199299846, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1dcc230c940e49744a0b79b97b423740, type: 3}
     - target: {fileID: 5832290293467075864, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
       propertyPath: m_Name
       value: Out of bounds text blue
@@ -9610,25 +9591,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1992933257}
-    - target: {fileID: 7220830391945579990, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 179.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8830387315272340059, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 180.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8913339060245999961, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
       propertyPath: m_Name
       value: Out of bounds text red
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987494551324656826, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 158.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987494551324656826, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -13.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb20e1b03d1e934689e553188ac45e6, type: 3}
