@@ -9130,6 +9130,10 @@ PrefabInstance:
       value: -57.350006
       objectReference: {fileID: 0}
     - target: {fileID: 5089800639503640829, guid: 2ca0b1132bd3a6d4e8052cc76bf82393, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089800639503640829, guid: 2ca0b1132bd3a6d4e8052cc76bf82393, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 494292680}
@@ -9187,6 +9191,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5283043332588712212, guid: 2ca0b1132bd3a6d4e8052cc76bf82393, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887289755823475599, guid: 2ca0b1132bd3a6d4e8052cc76bf82393, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887289755823475599, guid: 2ca0b1132bd3a6d4e8052cc76bf82393, type: 3}

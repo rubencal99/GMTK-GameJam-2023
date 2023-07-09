@@ -91,7 +91,7 @@ public class FoulManager : MonoBehaviour
 
 public struct Foul
 {
-    public enum FoulType { BALLOOB, PLAYEROOB, OFFSIDES, GOAL};
+    public enum FoulType { BALLOOB, PLAYEROOB, OFFSIDES, GOAL, BALLCONTACT, PLAYERCONTACT};
     public FoulType foulType;
     public Team team;
 

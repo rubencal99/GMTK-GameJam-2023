@@ -65,6 +65,7 @@ public class StageManager : MonoBehaviour
         topPanel.SetActive(false);
         defeatPanel.SetActive(true);
         musicManager.DefeatStinger();
+        musicManager.PauseMainTheme();
     }
 
     public void ReturnToTitleScreen()

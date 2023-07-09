@@ -43,6 +43,22 @@ public class CrowdManager : MonoBehaviour
         StageManager.instance.AnnounceCall();
     }
 
+    public void BallContact()
+    {
+        currentAnger += 10;
+        print("Anger level: " + currentAnger);
+        ChangeFace();
+        CheckDefeat();
+    }
+    
+    public void PlayerContact()
+    {
+        currentAnger += 5;
+        print("Anger level: " + currentAnger);
+        ChangeFace();
+        CheckDefeat();
+    }
+
     public void GoodCall()
     {
         sounds.PlaySound(5);
