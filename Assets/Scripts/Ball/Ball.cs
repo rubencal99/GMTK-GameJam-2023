@@ -11,8 +11,8 @@ public class Ball : MonoBehaviour
     public bool attemptingCapture;
     public Team teamOwner;
 
-    float ballTimer = 8f;
-    float ballTime = 8f;
+    float ballTimer = 15f;
+    float ballTime = 15f;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +51,8 @@ public class Ball : MonoBehaviour
         ballTimer = ballTime;
         ballStaminaAttacker = Random.Range(0.3f, 0.9f);
         ballStaminaDefender = Random.Range(0.3f, 0.9f);
+
+        ballTimer = ballTime;
 
         return ballStaminaAttacker < ballStaminaDefender;
     }

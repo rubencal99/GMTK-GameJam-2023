@@ -4,7 +4,7 @@ using UnityEngine;
 public class FoulManager : MonoBehaviour
 {
     public static FoulManager instance;
-    private bool recentFoul = false;
+    public bool recentFoul = false;
     private Foul currentFoul;
     private IEnumerator currentCoroutine;
     private bool whistleBlown = false;
@@ -33,18 +33,18 @@ public class FoulManager : MonoBehaviour
 
             StartCoroutine(currentCoroutine);
         }
-        else if (recentFoul == true)
-        {
-            CrowdManager.instance.BadCall("NoCall_Foul");
-            //Anger meter goes up for missing the previous foul
+        //else if (recentFoul == true)
+        //{
+        //    CrowdManager.instance.BadCall("NoCall_Foul");
+        //    //Anger meter goes up for missing the previous foul
 
-            currentFoul = foul;
-            recentFoul = true;
+        //    currentFoul = foul;
+        //    recentFoul = true;
 
-            StopCoroutine(currentCoroutine);
-            currentCoroutine = WaitForFlag();
-            StartCoroutine(currentCoroutine);
-        }
+        //    StopCoroutine(currentCoroutine);
+        //    currentCoroutine = WaitForFlag();
+        //    StartCoroutine(currentCoroutine);
+        //}
     }
 
     private IEnumerator WaitForFlag()
