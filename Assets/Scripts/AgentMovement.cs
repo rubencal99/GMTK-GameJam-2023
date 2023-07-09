@@ -18,6 +18,9 @@ public class AgentMovement : MonoBehaviour
     [SerializeField]
     public Vector3 movementDirection;
 
+    [SerializeField]
+    protected bool isPlayer = false;
+
 
 
     public Rigidbody2D rigidbody;

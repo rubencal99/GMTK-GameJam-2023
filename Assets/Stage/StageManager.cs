@@ -7,6 +7,7 @@ public class StageManager : MonoBehaviour
     public static StageManager instance;
     public StageTimer stageTimer;
     public GameObject flagPanel;
+    public GameObject referee;
 
     public GameObject victoryPanel;
     public GameObject defeatPanel;
@@ -29,9 +30,11 @@ public class StageManager : MonoBehaviour
 
     public void AnnounceCall()
     {
+        flagPanel.SetActive(false);
         //Play animation/sound, pause.
         //Crowd reaction
         //Reset players
+        referee.GetComponent<AgentInput>().enabled = true;
     }
 
     public void Victory()
