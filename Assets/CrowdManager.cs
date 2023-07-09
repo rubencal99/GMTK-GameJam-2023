@@ -11,11 +11,14 @@ public class CrowdManager : MonoBehaviour
     private Sprite[] faces = new Sprite[6];
     [SerializeField]
     private Image moodGuage;
+    private Sounds sounds;
 
     private void Awake()
     {
         instance = this;
         moodGuage.sprite = faces[0];
+        sounds = GetComponent<Sounds>();
+        sounds.PlaySoundLoop(4);
     }
 
     //This should contain all the values for how much anger increases/decreases.
@@ -32,14 +35,17 @@ public class CrowdManager : MonoBehaviour
 
     public void BadCall(string badCallType)
     {
+        sounds.PlaySound(1);
         currentAnger += crowdPeeves[badCallType];
         print("Anger level: " + currentAnger);
         ChangeFace();
         CheckDefeat();
+        StageManager.instance.AnnounceCall();
     }
 
     public void GoodCall()
     {
+        sounds.PlaySound(5);
         currentAnger -= 10;
         Mathf.Clamp(currentAnger, 0, 100);
         print("Anger level: " + currentAnger);
