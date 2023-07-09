@@ -13,6 +13,21 @@ public class MenuManager : MonoBehaviour
 
     }
 
+    public void OpenInstructions()
+    {
+
+    }
+
+    public void CloseCredits()
+    {
+
+    }
+
+    public void CloseInstructions()
+    {
+
+    }
+
     public void QuitGame()
     {
 
