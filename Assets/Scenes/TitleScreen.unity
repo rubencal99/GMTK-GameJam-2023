@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1112,7 +1112,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000038147, y: 100}
-  m_SizeDelta: {x: 400, y: 50}
+  m_SizeDelta: {x: 445.311, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1829397962
 MonoBehaviour:
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sweaty Soccer
+  m_text: No Harm No Foul
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aeb5b115da1f34dbd824aefec0e19558, type: 2}
   m_sharedMaterial: {fileID: -901110562843905012, guid: aeb5b115da1f34dbd824aefec0e19558, type: 2}
