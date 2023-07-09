@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Sounds : MonoBehaviour
@@ -9,7 +7,7 @@ public class Sounds : MonoBehaviour
 
     public void PlaySound(int soundNum)
     {
-        audioSource.PlayOneShot(sounds[soundNum]);
+        audioSource.PlayOneShot(sounds[soundNum], 0.9f);
     }
 
     public void PlaySoundLoop(int soundNum)
