@@ -60,6 +60,7 @@ public class FoulManager : MonoBehaviour
 
         currentCoroutine = null;
         print("Missed foul! Type: " + currentFoul.foulType + ". Team: " + currentFoul.team.name);
+        CrowdManager.instance.BadCall("NoCall_Foul");
         recentFoul = false;
     }
 

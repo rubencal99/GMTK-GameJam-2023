@@ -3147,7 +3147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &646000744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4808,7 +4808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7816f8bad3214394c9c9f04a524c63fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamPanel: {fileID: 589343054}
   buttonPrefab: {fileID: 6004177165623399180, guid: 5b1fdb94efa45b84a9608038d14c119b, type: 3}
 --- !u!114 &986654753
 MonoBehaviour:
