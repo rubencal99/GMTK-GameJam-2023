@@ -12,23 +12,21 @@ public class StageTimer : MonoBehaviour
 
     private void Update()
     {
-        //if(Input.GetKeyDown(KeyCode.Tab))
-        //{
-        //    isPaused = !isPaused;
-        //}
-
         if(!isPaused)
         {
-            if(timerValue > 0)
-            {
-                timerValue -= Time.deltaTime;
-                timerText.text = Mathf.RoundToInt(timerValue).ToString();
-            }
-            else if(timerValue <= 0)
-            {
-                timerValue = 0;
-                StageManager.instance.Victory();
-            }
+            timerValue += Time.deltaTime;
+            timerText.text = Mathf.RoundToInt(timerValue).ToString();
+
+            //if (timerValue > 0)
+            //{
+            //    timerValue += Time.deltaTime;
+            //    timerText.text = Mathf.RoundToInt(timerValue).ToString();
+            //}
+            //else if(timerValue <= 0)
+            //{
+            //    timerValue = 0;
+            //    StageManager.instance.Victory();
+            //}
         }
     }
 
@@ -40,5 +38,10 @@ public class StageTimer : MonoBehaviour
     public void UnPauseTimer()
     {
         isPaused = false;
+    }
+
+    public int FinalTime()
+    {
+        return Mathf.RoundToInt(timerValue);
     }
 }
