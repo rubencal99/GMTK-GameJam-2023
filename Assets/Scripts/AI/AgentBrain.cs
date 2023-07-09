@@ -16,6 +16,7 @@ public class AgentBrain : MonoBehaviour
     public GameObject closestEnemyGoal;
     public GameObject closestEnemy;
     public GameObject closestTeammate;
+    public List<Player> teammates = new List<Player>();
 
     public Player player;
     public BallController ballController;
@@ -31,6 +32,7 @@ public class AgentBrain : MonoBehaviour
         FindGoals();
         FindEnemy();
         FindTeammate();
+        FindTeammates();
     }
 
     private void Update()
@@ -117,6 +119,17 @@ public class AgentBrain : MonoBehaviour
                     closestTeammate = p.gameObject;
                     distance = d;
                 }
+            }
+        }
+    }
+
+    public void FindTeammates()
+    {
+        foreach (Player p in FindObjectsOfType<Player>())
+        {
+            if (p.teamColor == player.teamColor && p != player)
+            {
+                teammates.Add(p);
             }
         }
     }

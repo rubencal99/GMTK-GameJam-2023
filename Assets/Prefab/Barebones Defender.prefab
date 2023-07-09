@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 3340117695438696782}
   - component: {fileID: 5528287052055846419}
   - component: {fileID: 3147208609915486864}
+  - component: {fileID: 2105042065773902553}
   m_Layer: 7
-  m_Name: AttackingPassToTeammate
+  m_Name: PassToTeammate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,6 +35,7 @@ Transform:
   m_Children:
   - {fileID: 1150737031}
   - {fileID: 1706212618}
+  - {fileID: 2730901321386329596}
   m_Father: {fileID: 1220990134321078655}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,11 +52,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Actions:
-  - {fileID: 3147208609915486864}
+  - {fileID: 2105042065773902553}
   - {fileID: 5528287052055846419}
   - {fileID: 3340117695438696782}
   Transitions:
-  - {fileID: 1706212620}
+  - {fileID: 8152137867301070544}
 --- !u!114 &3340117695438696782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +91,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 515f736736d012745917a60fb5d47135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2105042065773902553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154794843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240118177f752f34da4073b8fb07be80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &514576735
@@ -145,7 +159,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06f7118fce70a3241aa317ed79582eea, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -167,7 +181,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -233150338, guid: ce4e91173dc3a57488097b8bcbb71ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -227,7 +241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &528631662
 Transform:
   m_ObjectHideFlags: 0
@@ -286,7 +300,7 @@ GameObject:
   - component: {fileID: 766873318}
   - component: {fileID: 766873320}
   m_Layer: 7
-  m_Name: DefendingGoToPostState
+  m_Name: GoToPostState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,7 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Decisions>k__BackingField:
   - {fileID: 1165921731}
-  <PositiveResult>k__BackingField: {fileID: 1220990133634238982}
+  <PositiveResult>k__BackingField: {fileID: 766873317}
   <NegativeResult>k__BackingField: {fileID: 0}
 --- !u!114 &1165921731
 MonoBehaviour:
@@ -641,7 +655,7 @@ GameObject:
   - component: {fileID: 1666622503}
   - component: {fileID: 1666622504}
   m_Layer: 7
-  m_Name: TransitionAttackingIdleState
+  m_Name: TransitionPassToTeamate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,7 +690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Decisions>k__BackingField:
   - {fileID: 1666622504}
-  <PositiveResult>k__BackingField: {fileID: 1743809725}
+  <PositiveResult>k__BackingField: {fileID: 154794847}
   <NegativeResult>k__BackingField: {fileID: 0}
 --- !u!114 &1666622504
 MonoBehaviour:
@@ -737,6 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBall: 0
+  randomBias: 0
   aimDirection: {x: 0, y: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   desiredAngle: 0
@@ -775,7 +790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1706212618
 Transform:
   m_ObjectHideFlags: 0
@@ -836,7 +851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1743809723
 Transform:
   m_ObjectHideFlags: 0
@@ -954,7 +969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134409693}
   - component: {fileID: 2134409694}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: BallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1021,6 @@ GameObject:
   - component: {fileID: 1220990132857799286}
   - component: {fileID: 219905495}
   - component: {fileID: 219905491}
-  - component: {fileID: 611232941503104896}
   m_Layer: 7
   m_Name: Barebones Defender
   m_TagString: Untagged
@@ -1050,6 +1064,7 @@ MonoBehaviour:
   closestEnemyGoal: {fileID: 0}
   closestEnemy: {fileID: 0}
   closestTeammate: {fileID: 0}
+  teammates: []
   player: {fileID: 219905491}
   ballController: {fileID: 1675221298}
   <OnMovementKeyPressed>k__BackingField:
@@ -1187,10 +1202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff73292f42795d49938d6de9a193202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: {fileID: 11400000, guid: 430ae43790a5dcd4fabbf0f07e423575, type: 2}
+  team: {fileID: 11400000, guid: 7591fde05be92ce43823572e7f430719, type: 2}
   teamColor: {r: 0, g: 0, b: 0, a: 0}
-  positions:
-  - {fileID: 0}
+  defendingPosition: {fileID: 0}
+  attackingPosition: {fileID: 0}
 --- !u!1 &1220990133634239032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1218,7 @@ GameObject:
   - component: {fileID: 1220990133634238982}
   - component: {fileID: 1220990133634238983}
   m_Layer: 7
-  m_Name: DefendingRushBallState
+  m_Name: RushBallState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1333,7 +1348,7 @@ GameObject:
   - component: {fileID: 1220990134325342919}
   - component: {fileID: 1220990134325342918}
   m_Layer: 7
-  m_Name: TransitionDefend
+  m_Name: TransitionGoToPost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1394,7 +1409,7 @@ GameObject:
   - component: {fileID: 1220990134354298690}
   - component: {fileID: 1220990134354298691}
   m_Layer: 7
-  m_Name: DefendingIdleState
+  m_Name: IdleState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1415,6 +1430,7 @@ Transform:
   - {fileID: 1220990134371688206}
   - {fileID: 1220990134577206264}
   - {fileID: 1165921730}
+  - {fileID: 8813853959251970797}
   m_Father: {fileID: 1220990134321078655}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1435,6 +1451,7 @@ MonoBehaviour:
   Transitions:
   - {fileID: 1220990134577206214}
   - {fileID: 1165921732}
+  - {fileID: 0}
 --- !u!114 &1220990134354298691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1570,4 +1587,125 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7702ca2b1580a4a8c9596c5c0d3d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Distance>k__BackingField: 7.9
+  <Distance>k__BackingField: 8.11
+--- !u!1 &5402723156995849258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2730901321386329596}
+  - component: {fileID: 8152137867301070544}
+  - component: {fileID: 6479808274065409775}
+  m_Layer: 7
+  m_Name: TransitionGoToPost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2730901321386329596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402723156995849258}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 154794844}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8152137867301070544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402723156995849258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb928caa3ffbde14ead3568acfd6ed38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Decisions>k__BackingField: []
+  <PositiveResult>k__BackingField: {fileID: 0}
+  <NegativeResult>k__BackingField: {fileID: 766873317}
+--- !u!114 &6479808274065409775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402723156995849258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c47e72fcd0beb4e8e65f258621b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8605336874183271368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8813853959251970797}
+  - component: {fileID: 8284754551173545002}
+  - component: {fileID: 6563920206968108555}
+  m_Layer: 7
+  m_Name: TransitionPassToTeamate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8813853959251970797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8605336874183271368}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1220990134354298695}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8284754551173545002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8605336874183271368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb928caa3ffbde14ead3568acfd6ed38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Decisions>k__BackingField:
+  - {fileID: 6563920206968108555}
+  <PositiveResult>k__BackingField: {fileID: 154794847}
+  <NegativeResult>k__BackingField: {fileID: 0}
+--- !u!114 &6563920206968108555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8605336874183271368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c47e72fcd0beb4e8e65f258621b01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

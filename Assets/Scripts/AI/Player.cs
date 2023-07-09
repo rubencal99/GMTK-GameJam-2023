@@ -8,7 +8,9 @@ public class Player : MonoBehaviour
     public Color teamColor;
 
     [SerializeField]
-    public List<Transform> positions;
+    public Transform defendingPosition;
+    [SerializeField]
+    public Transform attackingPosition;
 
     private void Awake()
     {

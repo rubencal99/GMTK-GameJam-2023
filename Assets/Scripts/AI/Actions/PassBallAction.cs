@@ -6,6 +6,6 @@ public class PassBallAction : AIAction
 {
     public override void TakeAction()
     {
-        agentBrain.ballController.ShootBall();
+        agentBrain.Shoot();
     }
 }

@@ -20,7 +20,16 @@ public class GoToPostAction : AIAction
     {
         if(Timer < 0)
         {
-            aiMovementData.PointOfInterest = (Vector2)agentBrain.player.positions[0].position +
+            Vector2 position;
+            if(TeamManager.instance.inPossession == agentBrain.player.teamColor)
+            {
+                position = (Vector2)agentBrain.player.attackingPosition.position;
+            }
+            else
+            {
+                position = (Vector2)agentBrain.player.defendingPosition.position;
+            }
+            aiMovementData.PointOfInterest = position +
                                        new Vector2(Random.Range(-randomBias, randomBias), Random.Range(-randomBias, randomBias));
             ResetTimer();
         }

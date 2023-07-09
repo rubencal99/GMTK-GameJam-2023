@@ -7,6 +7,7 @@ public class BallController : MonoBehaviour
 {
     public bool hasBall = false;
 
+    public float randomBias;
     public Vector2 aimDirection;
     public Quaternion rotation;
     //public Quaternion startingRotation;
@@ -14,6 +15,12 @@ public class BallController : MonoBehaviour
 
     public GameObject ballCollider;
     public Ball Ball;
+
+    private void Update()
+    {
+        if (Ball == null)
+            hasBall = false;
+    }
 
     public void AimBall(Vector2 movementDirection)
     {
@@ -42,7 +49,7 @@ public class BallController : MonoBehaviour
         if (!hasBall)
             return;
 
-        Ball.GetComponent<Rigidbody2D>().AddForce(1000 * aimDirection);
+        Ball.GetComponent<Rigidbody2D>().AddForce(1000 * (aimDirection + new Vector2(Random.Range(-randomBias, randomBias), Random.Range(-randomBias, randomBias))));
         DiscardBall();
 
         transform.localRotation = Quaternion.identity;
@@ -108,8 +115,9 @@ public class BallController : MonoBehaviour
         Ball.transform.parent = transform;
         Ball.GetComponent<Rigidbody2D>().simulated = false;
 
-        Ball.SetOwner(GetComponentInParent<PlayerTeam>().GetTeam());
+        //Ball.SetOwner(GetComponentInParent<PlayerTeam>().GetTeam());
 
+        TeamManager.instance.inPossession = transform.parent.GetComponent<Player>().teamColor;
         //Ball.EnsureCapture(this);
     }
 

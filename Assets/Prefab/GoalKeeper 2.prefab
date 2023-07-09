@@ -224,6 +224,7 @@ MonoBehaviour:
   <MovementData>k__BackingField: {fileID: 11400000, guid: 88a0746e18e641c4f8150747d3957742, type: 2}
   currentVelocity: 0
   movementDirection: {x: 0, y: 0, z: 0}
+  isPlayer: 0
   rigidbody: {fileID: 1112906370494458148}
   <OnVelocityChange>k__BackingField:
     m_PersistentCalls:
@@ -258,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: {fileID: 11400000, guid: 430ae43790a5dcd4fabbf0f07e423575, type: 2}
   teamColor: {r: 0, g: 0, b: 0, a: 0}
+  positions: []
 --- !u!114 &1433047386789717063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1191,7 +1193,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06f7118fce70a3241aa317ed79582eea, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1495,7 +1497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2269816945565035150}
   - component: {fileID: 2269816945565035149}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: BallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
