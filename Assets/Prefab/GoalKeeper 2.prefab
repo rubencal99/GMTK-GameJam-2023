@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 1112906370494458149}
   - component: {fileID: 2269816944258651780}
   - component: {fileID: 2269816944258651776}
+  - component: {fileID: 1433047386789717063}
   m_Layer: 7
   m_Name: GoalKeeper 2
   m_TagString: Untagged
@@ -116,6 +117,7 @@ MonoBehaviour:
   <CurrentState>k__BackingField: {fileID: 1112906371754617643}
   closestBall: {fileID: 0}
   closestGoal: {fileID: 0}
+  closestEnemyGoal: {fileID: 0}
   closestEnemy: {fileID: 0}
   closestTeammate: {fileID: 0}
   player: {fileID: 2269816944258651776}
@@ -256,6 +258,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: {fileID: 11400000, guid: 430ae43790a5dcd4fabbf0f07e423575, type: 2}
   teamColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &1433047386789717063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112906370494458168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a63e2536a7b32647babe175980f8524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatar: {fileID: 2269816943928392204}
+  team: {fileID: 0}
 --- !u!1 &1112906370789597547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1191,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 06f7118fce70a3241aa317ed79582eea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
