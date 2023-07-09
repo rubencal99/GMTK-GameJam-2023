@@ -35,7 +35,7 @@ public class StageManager : MonoBehaviour
         stageTimer.PauseTimer();
         FoulManager.instance.StopCountdown();
         musicManager.PauseMainTheme();
-        flagPanel.SetActive(true);
+        //flagPanel.SetActive(true);
     }
 
     public void AnnounceCall()

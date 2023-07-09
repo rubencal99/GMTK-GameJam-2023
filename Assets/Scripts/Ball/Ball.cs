@@ -48,6 +48,7 @@ public class Ball : MonoBehaviour
         if (!inPossession)
             return true;
 
+        ballTimer = ballTime;
         ballStaminaAttacker = Random.Range(0.3f, 0.9f);
         ballStaminaDefender = Random.Range(0.3f, 0.9f);
 
