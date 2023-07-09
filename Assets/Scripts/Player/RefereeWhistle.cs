@@ -27,5 +27,9 @@ public class RefereeWhistle : MonoBehaviour
         //(if active) Pause WaitForFlag coroutine in FoulTracker - DONE
         StageManager.instance.WhistleBlown();
     }
-        
+    
+    public void EnableInput()
+    {
+        agentInput.enabled = false;
+    }
 }

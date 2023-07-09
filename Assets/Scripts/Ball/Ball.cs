@@ -11,6 +11,9 @@ public class Ball : MonoBehaviour
     public bool attemptingCapture;
     public Team teamOwner;
 
+    float ballTimer = 8f;
+    float ballTime = 8f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +25,21 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!inPossession)
+        {
+            ballTimer -= Time.deltaTime;
+            if(ballTimer < 0)
+            {
+                ResetBall();
+                ballTimer = ballTime;
+            }
+        }
         EnsureCapture();
+    }
+
+    void ResetBall()
+    {
+        transform.position = Vector2.zero;
     }
 
     public bool AttemptCapture()
