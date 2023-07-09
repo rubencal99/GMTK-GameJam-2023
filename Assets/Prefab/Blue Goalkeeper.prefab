@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7944453917193030711
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478904, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182020524069478906, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_Name
+      value: Blue Goalkeeper
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330671566414519874, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: team
+      value: 
+      objectReference: {fileID: 11400000, guid: 430ae43790a5dcd4fabbf0f07e423575, type: 2}
+    - target: {fileID: 1330671566725919474, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330671566725919474, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.048102617
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330671566725919474, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2bf6410e48f860048b44bd963f30f64a, type: 3}
