@@ -6,6 +6,7 @@ public class Bird : MonoBehaviour
 {
     public float time;
     public float Timer;
+    public GameObject bird_jumpscare;
 
     public Rigidbody2D rigidbody;
     // Start is called before the first frame update
@@ -20,10 +21,18 @@ public class Bird : MonoBehaviour
     void Update()
     {
         Timer -= Time.deltaTime;
-        if(Timer < 0 )
+        if(Timer < 10 && Timer > 9)
         {
             AnimateBird();
-            Timer = Random.Range(15f, 25f);
+        }
+        if(Timer < 4)
+        {
+            bird_jumpscare.SetActive(true);
+        }
+        if(Timer < 0)
+        {
+            Timer = Random.Range(25f, 30f);
+            bird_jumpscare.SetActive(false);
         }
         if(transform.position.x < -3)
         {
