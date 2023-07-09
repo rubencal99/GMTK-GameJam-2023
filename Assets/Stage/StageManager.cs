@@ -9,6 +9,8 @@ public class StageManager : MonoBehaviour
     public GameObject flagPanel;
     public GameObject referee;
 
+    public MusicManager musicManager;
+
     public GameObject victoryPanel;
     public GameObject defeatPanel;
     public GameObject pausePanel;
@@ -18,19 +20,27 @@ public class StageManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        //StartNewCoroutine(IntroRoutine());
+        StartNewCoroutine(IntroRoutine());
+    }
+
+    public void RoundStart()
+    {
+        musicManager.RoundStartStinger();
+        CrowdManager.instance.sounds.PlaySoundLoop(2);
     }
 
     public void WhistleBlown()
     {
         stageTimer.PauseTimer();
         FoulManager.instance.StopCountdown();
+        musicManager.PauseMainTheme();
         flagPanel.SetActive(true);
     }
 
     public void AnnounceCall()
     {
         flagPanel.SetActive(false);
+        musicManager.PlayMainTheme();
         //Play animation/sound, pause.
         //Crowd reaction
         referee.GetComponent<AgentInput>().enabled = true;
@@ -40,11 +50,13 @@ public class StageManager : MonoBehaviour
     public void Victory()
     {
         victoryPanel.SetActive(true);
+        musicManager.VictoryStinger();
     }
 
     public void Defeat()
     {
         defeatPanel.SetActive(true);
+        musicManager.DefeatStinger();
     }
 
     public void ReturnToTitleScreen()
@@ -72,14 +84,19 @@ public class StageManager : MonoBehaviour
         float timeElapsed = 0f;
         float timeDuration = 5f;
 
-        while(timeElapsed < timeDuration)
+        RoundStart();
+
+        while (timeElapsed < timeDuration)
         {
-            print("Ready?");
             timeElapsed += Time.deltaTime;
+
             yield return null;
         }
 
-        StartNewCoroutine(StartGame());
+        //Enable Player control
+        //Enable Referee control
+        musicManager.PlayMainTheme();
+        CrowdManager.instance.sounds.PlaySoundLoop(4);  //Crowd loop
     }
 
     private IEnumerator StartGame()
@@ -89,7 +106,6 @@ public class StageManager : MonoBehaviour
 
         while (timeElapsed < timeDuration)
         {
-            print("Go!!");
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -99,28 +115,5 @@ public class StageManager : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(coroutine);
-    }
-
-    private void Update()
-    {
-        //Run the current state that is on top of the stack
-
-
-        //if(Input.GetKeyDown(KeyCode.Q))
-        //{
-
-        //}
-        //else if (Input.GetKeyDown(KeyCode.W))
-        //{
-
-        //}
-        //else if (Input.GetKeyDown(KeyCode.F))
-        //{
-
-        //}
-        //else if (Input.GetKeyDown(KeyCode.P))
-        //{
-
-        //}
     }
 }

@@ -11,7 +11,7 @@ public class CrowdManager : MonoBehaviour
     private Sprite[] faces = new Sprite[6];
     [SerializeField]
     private Image moodGuage;
-    private Sounds sounds;
+    public Sounds sounds;
 
     private void Awake()
     {
