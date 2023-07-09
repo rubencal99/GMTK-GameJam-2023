@@ -145,7 +145,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 06f7118fce70a3241aa317ed79582eea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1006,6 +1006,7 @@ GameObject:
   - component: {fileID: 1220990132857799286}
   - component: {fileID: 219905495}
   - component: {fileID: 219905491}
+  - component: {fileID: 611232941503104896}
   m_Layer: 7
   m_Name: Barebones Defender
   m_TagString: Untagged

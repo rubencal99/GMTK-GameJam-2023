@@ -943,6 +943,7 @@ GameObject:
   - component: {fileID: 8282675359296561533}
   - component: {fileID: 7061694061478207196}
   - component: {fileID: 7061694061478207192}
+  - component: {fileID: 4078770838662394167}
   m_Layer: 7
   m_Name: Striker
   m_TagString: Untagged
@@ -1101,6 +1102,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: {fileID: 11400000, guid: 430ae43790a5dcd4fabbf0f07e423575, type: 2}
   teamColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &4078770838662394167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282675359296561504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a63e2536a7b32647babe175980f8524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatar: {fileID: 7061694061183529556}
+  team: {fileID: 0}
 --- !u!1 &8282675359593867571
 GameObject:
   m_ObjectHideFlags: 0
